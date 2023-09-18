@@ -3,7 +3,7 @@
 <p>{{ $course->description }}</p>
 
 <p>
-	{{ count($course->videos) }} videos
+	{{ $course->videos_count }} videos
 </p>
 
 <ul>

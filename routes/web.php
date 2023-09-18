@@ -15,6 +15,6 @@ use App\Http\Controllers\PageCourseDetailsController;
 |
 */
 
-Route::get('/', PageHomeController::class)->name('home');
+Route::get('/', PageHomeController::class)->name('pages.home');
 
-Route::get('/courses/{course:slug}', PageCourseDetailsController::class)->name('course-details');
+Route::get('/courses/{course:slug}', PageCourseDetailsController::class)->name('pages.course-details');
