@@ -1,10 +1,9 @@
 <?php
 
+use App\Models\Course;
 use App\Models\Video;
 
-use App\Models\Course;
 use function Pest\Laravel\get;
-
 
 it('does not find unreleased course', function () {
     // Arrange
@@ -14,7 +13,6 @@ it('does not find unreleased course', function () {
     get(route('pages.course-details', $course))
         ->assertNotFound();
 });
-
 
 it('shows course details', function () {
     // Arrange

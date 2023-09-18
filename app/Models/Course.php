@@ -2,18 +2,17 @@
 
 namespace App\Models;
 
-use App\Models\Video;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Course extends Model
 {
     use HasFactory;
 
     public $casts = [
-        'learnings' => 'array'
+        'learnings' => 'array',
     ];
 
     public function scopeReleased(Builder $query): Builder
