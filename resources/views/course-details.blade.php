@@ -12,5 +12,5 @@
 	@endforeach
 </ul>
 
-<img src="{{ $course->image }}"
+<img src="{{ asset("images/$course->image_name") }}"
 	alt="Image of the course {{ $course->title }}">

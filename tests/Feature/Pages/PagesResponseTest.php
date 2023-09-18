@@ -10,7 +10,7 @@ it('gives back successful response for homepage', function () {
 
 it('gives back succesful response for course details page', function () {
     // Arrange
-    $course = Course::factory()->create();
+    $course = Course::factory()->released()->create();
 
     // Act & Assert
     get(route('course-details', $course))

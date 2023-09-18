@@ -27,7 +27,7 @@ class CourseFactory extends Factory
                 $this->faker->sentence,
                 $this->faker->sentence,
             ],
-            'image' => 'image.jpg',
+            'image_name' => 'image.jpg',
         ];
     }
 
