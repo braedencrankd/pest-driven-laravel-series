@@ -1,9 +1,9 @@
 <?php
 
-use Carbon\Carbon;
 use App\Models\Course;
-use function Pest\Laravel\get;
+use Carbon\Carbon;
 
+use function Pest\Laravel\get;
 
 it('shows courses overview', function () {
     // Arrange

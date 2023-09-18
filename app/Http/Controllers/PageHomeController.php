@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use Illuminate\Http\Request;
 
 class PageHomeController extends Controller
 {
@@ -13,6 +12,7 @@ class PageHomeController extends Controller
             ->released()
             ->orderByDesc('released_at')
             ->get();
+
         return view('home', compact('courses'));
     }
 }
