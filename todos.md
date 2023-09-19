@@ -10,7 +10,7 @@
 
 -   Log in (page) ✅
 -   See purchased courses (page) ✅
--   Watch purchassed course (page)
+-   Watch purchassed course (page) ✅
 
 # Admin can
 
