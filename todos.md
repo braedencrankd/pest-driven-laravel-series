@@ -9,7 +9,7 @@
 ## Member can
 
 -   Log in (page)
--   See purchased courses (page) 🔵
+-   See purchased courses (page) ✅
 -   Watch purchassed course (page)
 
 # Admin can

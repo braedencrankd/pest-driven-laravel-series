@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageHomeController;
+use App\Http\Controllers\PageVideosController;
 use App\Http\Controllers\PageDashboardController;
 use App\Http\Controllers\PageCourseDetailsController;
 
@@ -26,4 +27,5 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', PageDashboardController::class)->name('dashboard');
+    Route::get('videos/{course:slug}', PageVideosController::class)->name('pages.course-videos');
 });
