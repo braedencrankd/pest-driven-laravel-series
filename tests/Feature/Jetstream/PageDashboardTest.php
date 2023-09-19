@@ -9,7 +9,7 @@ use function Pest\Laravel\get;
 
 it('cannot be accessed by guest', function () {
     // Arrange
-    get(route('dashboard'))
+    get(route('pages.dashboard'))
         ->assertRedirect(route('login'));
 });
 
@@ -25,8 +25,8 @@ it('lists purchased courses', function () {
         ->create();
 
     // Act & Assert
-    $this->actingAs($user);
-    get(route('dashboard'))
+    loginAsUser($user);
+    get(route('pages.dashboard'))
         ->assertOk()
         ->assertSeeText([
             'Course A',
@@ -36,12 +36,11 @@ it('lists purchased courses', function () {
 
 it('does not list other courses', function () {
     // Arrange
-    $user = User::factory()->create();
     $course = Course::factory()->create();
 
     // Act & Assert
-    $this->actingAs($user);
-    get(route('dashboard'))
+    loginAsUser();
+    get(route('pages.dashboard'))
         ->assertOk()
         ->assertDontSeeText($course->title);
 });
@@ -65,8 +64,8 @@ it('shows latest purchased course first', function () {
     );
 
     // Act & Assert
-    $this->actingAs($user);
-    get(route('dashboard'))
+    loginAsUser($user);
+    get(route('pages.dashboard'))
         ->assertOk()
         ->assertSeeInOrder([
             $secondPurchasedCourse->title,
@@ -81,8 +80,8 @@ it('includes link to product video', function () {
         ->create();
 
     // Act & Assert
-    $this->actingAs($user);
-    get(route('dashboard'))
+    loginAsUser($user);
+    get(route('pages.dashboard'))
         ->assertOk()
         ->assertSeeText('Watch Videos')
         ->assertSee(route('pages.course-videos', Course::first()));
