@@ -1,8 +1,8 @@
 <?php
 
 use App\Models\User;
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
+use Tests\TestCase;
 
 use function Pest\Laravel\actingAs;
 

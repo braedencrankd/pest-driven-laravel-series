@@ -45,3 +45,20 @@ it('shows courses by release date', function () {
         ->assertOk()
         ->assertSeeTextInOrder([$newerCourse->title, $olderCourse->title]);
 });
+
+it('includes login if not logged in', function () {
+    get(route('pages.home'))
+        ->assertOk()
+        ->assertSeeText('Login')
+        ->assertSee(route('login'));
+});
+
+it('includes logout if logged in', function () {
+
+    loginAsUser();
+
+    get(route('pages.home'))
+        ->assertOk()
+        ->assertSeeText('Log out')
+        ->assertSee(route('logout'));
+});
